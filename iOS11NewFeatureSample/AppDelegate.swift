@@ -27,9 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
-        
-        UINavigationBar.appearance().barTintColor = .orange
-        
         return true
     }
 }

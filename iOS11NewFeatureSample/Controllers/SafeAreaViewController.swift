@@ -12,6 +12,7 @@ class SafeAreaViewController: UIViewController {
     var isShowStatusBar = true
     let safeAreaView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white
         view.layer.borderColor = UIColor.green.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 5.0
@@ -40,10 +41,10 @@ class SafeAreaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "safe area"
+        navigationItem.title = "Safe Area"
         view.backgroundColor = .orange
 //        
-//        print(systemMinimumLayoutMargins, view.safeAreaInsets, view.safeAreaLayoutGuide, view.layoutMargins, view.readableContentGuide)
+        print(systemMinimumLayoutMargins, view.safeAreaInsets, view.safeAreaLayoutGuide.layoutFrame, view.layoutMargins, view.readableContentGuide)
         //在iOS11,已经取消了viewController的topLayoutGuide和bottomLayoutGuide,使用safe area来替代,所谓safe area指的是app的subView布局的安全范围.
         //1.状态栏,导航栏,TabBar(标签栏)都存在的情况下的safe area
         //1.1 iPhoneX:导航栏的底部到tabBar的顶部的中间的那一块区域
@@ -57,7 +58,14 @@ class SafeAreaViewController: UIViewController {
         //3.1 iPhoneX: iPhoneX的导航栏的高度已经不是20了,safe area的区域从状态栏的底部到标签栏的顶部,如果没有标签栏则到屏幕底部的安全区域
         //3.2 其他iPhone:从状态栏的底部到标签栏的顶部,或者到屏幕底部的这段区域
         
-        //4
+        //4.没有状态栏,有导航栏,有或者没有标签栏
+        //4.1 iPhoneX:导航栏会从屏幕的顶部开始,导航栏会显的不完整,但是原本的导航栏的区域被空了出来,safe area依然是从原本的导航栏的位置开始到底部标签栏的位置,如果没有标签栏则到屏幕底部的安全区域
+        //4.2 其他iPhone:会从导航栏的底部开始到标签栏的顶部,或者屏幕底部的这一段区域
+        
+        //5.状态栏,导航栏,标签栏都没有的时候
+        //5.1 iPhoneX: 从屏幕顶部的安全区域的底部到屏幕底部的安全区域的顶部
+        //5.2 其他iPhone: 整个屏幕的区域都是安全区域
+        
         view.addSubview(safeAreaView)
         safeAreaView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         safeAreaView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
@@ -85,11 +93,14 @@ class SafeAreaViewController: UIViewController {
     @objc private func hiddenOrShowStatusBar(_ barButtonItem: UIBarButtonItem) {
         isShowStatusBar = !isShowStatusBar
         setNeedsStatusBarAppearanceUpdate()
+        print(view.safeAreaLayoutGuide.layoutFrame)
+
     }
     
     @objc private func hiddenOrShowNavigationBar(_ barButtonItem: UIBarButtonItem) {
         if let isShowNavigationBar = navigationController?.navigationBar.isHidden {
             navigationController?.setNavigationBarHidden(!isShowNavigationBar, animated: true)
+            print(view.safeAreaLayoutGuide.layoutFrame)
         }
     }
     
