@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     static let cellIdentifier = "SaveAreaCell"
-    let dataSources = ["safe area", "bars height", "contentInsetAdjustmentBehavior"]
+    let dataSources = ["safe area", "bars height","Bolder navigation", "contentInsetAdjustmentBehavior", "new auto layout API property"]
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "iOS11"
@@ -48,6 +48,10 @@ extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
         var willPushedViewController: UIViewController?
         if indexPath.row == 0 {
             willPushedViewController = SafeAreaViewController()
+        }else if indexPath.row == 1 {
+            willPushedViewController = BarsHeightViewController()
+        }else if indexPath.row == 2 {
+            willPushedViewController = BolderNavigationViewController()
         }
         
         if let viewController = willPushedViewController {

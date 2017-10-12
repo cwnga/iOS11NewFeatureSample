@@ -43,8 +43,7 @@ class SafeAreaViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Safe Area"
         view.backgroundColor = .orange
-//        
-        print(systemMinimumLayoutMargins, view.safeAreaInsets, view.safeAreaLayoutGuide.layoutFrame, view.layoutMargins, view.readableContentGuide)
+        print(view.frame, view.safeAreaLayoutGuide.layoutFrame)
         //在iOS11,已经取消了viewController的topLayoutGuide和bottomLayoutGuide,使用safe area来替代,所谓safe area指的是app的subView布局的安全范围.
         //1.状态栏,导航栏,TabBar(标签栏)都存在的情况下的safe area
         //1.1 iPhoneX:导航栏的底部到tabBar的顶部的中间的那一块区域

@@ -15,6 +15,10 @@
 		CE9AED021F7A1B4600EF7A12 /* SafeAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AECFD1F7A1AF100EF7A12 /* SafeAreaViewController.swift */; };
 		CE9AED031F7A1B4600EF7A12 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AECFC1F7A1AF100EF7A12 /* NavigationController.swift */; };
 		CE9AED041F7A1B4600EF7A12 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AECFB1F7A1AF100EF7A12 /* FirstViewController.swift */; };
+		CEFAB4371F8DFC9400965A11 /* BarsHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB4361F8DFC9400965A11 /* BarsHeightViewController.swift */; };
+		CEFAB4391F8F629D00965A11 /* BolderNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB4381F8F629D00965A11 /* BolderNavigationViewController.swift */; };
+		CEFAB43B1F8F762000965A11 /* ContentInsetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */; };
+		CEFAB43D1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		CE9AECFD1F7A1AF100EF7A12 /* SafeAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaViewController.swift; sourceTree = "<group>"; };
 		CE9AECFE1F7A1AF100EF7A12 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CE9AECFF1F7A1AF100EF7A12 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CEFAB4361F8DFC9400965A11 /* BarsHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarsHeightViewController.swift; sourceTree = "<group>"; };
+		CEFAB4381F8F629D00965A11 /* BolderNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolderNavigationViewController.swift; sourceTree = "<group>"; };
+		CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInsetViewController.swift; sourceTree = "<group>"; };
+		CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAutoLayoutAPIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,10 @@
 				CE9AECFD1F7A1AF100EF7A12 /* SafeAreaViewController.swift */,
 				CE9AECFE1F7A1AF100EF7A12 /* SecondViewController.swift */,
 				CE9AECFF1F7A1AF100EF7A12 /* TabBarViewController.swift */,
+				CEFAB4361F8DFC9400965A11 /* BarsHeightViewController.swift */,
+				CEFAB4381F8F629D00965A11 /* BolderNavigationViewController.swift */,
+				CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */,
+				CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,11 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFAB4371F8DFC9400965A11 /* BarsHeightViewController.swift in Sources */,
 				CE9AED001F7A1B4600EF7A12 /* SecondViewController.swift in Sources */,
+				CEFAB43B1F8F762000965A11 /* ContentInsetViewController.swift in Sources */,
 				CE9AED011F7A1B4600EF7A12 /* TabBarViewController.swift in Sources */,
 				CE9AED031F7A1B4600EF7A12 /* NavigationController.swift in Sources */,
+				CEFAB43D1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift in Sources */,
 				CE9AED041F7A1B4600EF7A12 /* FirstViewController.swift in Sources */,
 				CE9AED021F7A1B4600EF7A12 /* SafeAreaViewController.swift in Sources */,
+				CEFAB4391F8F629D00965A11 /* BolderNavigationViewController.swift in Sources */,
 				CE9AECE91F7A1AA000EF7A12 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
