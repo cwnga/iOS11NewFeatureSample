@@ -19,6 +19,7 @@
 		CEFAB4391F8F629D00965A11 /* BolderNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB4381F8F629D00965A11 /* BolderNavigationViewController.swift */; };
 		CEFAB43B1F8F762000965A11 /* ContentInsetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */; };
 		CEFAB43D1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */; };
+		CEFAB4521F908D6500965A11 /* NewFeatureInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB4511F908D6500965A11 /* NewFeatureInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CEFAB4381F8F629D00965A11 /* BolderNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolderNavigationViewController.swift; sourceTree = "<group>"; };
 		CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInsetViewController.swift; sourceTree = "<group>"; };
 		CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAutoLayoutAPIViewController.swift; sourceTree = "<group>"; };
+		CEFAB4511F908D6500965A11 /* NewFeatureInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				CEFAB4381F8F629D00965A11 /* BolderNavigationViewController.swift */,
 				CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */,
 				CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */,
+				CEFAB4511F908D6500965A11 /* NewFeatureInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				CEFAB43D1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift in Sources */,
 				CE9AED041F7A1B4600EF7A12 /* FirstViewController.swift in Sources */,
 				CE9AED021F7A1B4600EF7A12 /* SafeAreaViewController.swift in Sources */,
+				CEFAB4521F908D6500965A11 /* NewFeatureInViewController.swift in Sources */,
 				CEFAB4391F8F629D00965A11 /* BolderNavigationViewController.swift in Sources */,
 				CE9AECE91F7A1AA000EF7A12 /* AppDelegate.swift in Sources */,
 			);
