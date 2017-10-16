@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1698A51F9447E200C67FC3 /* ViewNewAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1698A41F9447E200C67FC3 /* ViewNewAPIViewController.swift */; };
+		CE1698A81F944C8500C67FC3 /* LayoutMarginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1698A71F944C8500C67FC3 /* LayoutMarginsView.swift */; };
+		CE1698AA1F944CA900C67FC3 /* DirectionalLayoutMarginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1698A91F944CA900C67FC3 /* DirectionalLayoutMarginsView.swift */; };
+		CE1698AC1F94888000C67FC3 /* SafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1698AB1F94888000C67FC3 /* SafeAreaView.swift */; };
 		CE9AECE91F7A1AA000EF7A12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AECE81F7A1AA000EF7A12 /* AppDelegate.swift */; };
 		CE9AECF01F7A1AA000EF7A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9AECEF1F7A1AA000EF7A12 /* Assets.xcassets */; };
 		CE9AECF31F7A1AA000EF7A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9AECF11F7A1AA000EF7A12 /* LaunchScreen.storyboard */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1698A41F9447E200C67FC3 /* ViewNewAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNewAPIViewController.swift; sourceTree = "<group>"; };
+		CE1698A71F944C8500C67FC3 /* LayoutMarginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutMarginsView.swift; sourceTree = "<group>"; };
+		CE1698A91F944CA900C67FC3 /* DirectionalLayoutMarginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalLayoutMarginsView.swift; sourceTree = "<group>"; };
+		CE1698AB1F94888000C67FC3 /* SafeAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaView.swift; sourceTree = "<group>"; };
 		CE9AECE51F7A1AA000EF7A12 /* iOS11NewFeatureSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS11NewFeatureSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9AECE81F7A1AA000EF7A12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9AECEF1F7A1AA000EF7A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1698A61F944C6700C67FC3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE1698A71F944C8500C67FC3 /* LayoutMarginsView.swift */,
+				CE1698A91F944CA900C67FC3 /* DirectionalLayoutMarginsView.swift */,
+				CE1698AB1F94888000C67FC3 /* SafeAreaView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE9AECDC1F7A1AA000EF7A12 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +88,7 @@
 		CE9AECE71F7A1AA000EF7A12 /* iOS11NewFeatureSample */ = {
 			isa = PBXGroup;
 			children = (
+				CE1698A61F944C6700C67FC3 /* Views */,
 				CE9AED061F7A1B6400EF7A12 /* Controllers */,
 				CE9AECE81F7A1AA000EF7A12 /* AppDelegate.swift */,
 				CE9AECEF1F7A1AA000EF7A12 /* Assets.xcassets */,
@@ -92,6 +111,7 @@
 				CEFAB43A1F8F762000965A11 /* ContentInsetViewController.swift */,
 				CEFAB43C1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift */,
 				CEFAB4511F908D6500965A11 /* NewFeatureInViewController.swift */,
+				CE1698A41F9447E200C67FC3 /* ViewNewAPIViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,16 +188,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFAB4371F8DFC9400965A11 /* BarsHeightViewController.swift in Sources */,
+				CE1698AC1F94888000C67FC3 /* SafeAreaView.swift in Sources */,
 				CE9AED001F7A1B4600EF7A12 /* SecondViewController.swift in Sources */,
 				CEFAB43B1F8F762000965A11 /* ContentInsetViewController.swift in Sources */,
 				CE9AED011F7A1B4600EF7A12 /* TabBarViewController.swift in Sources */,
 				CE9AED031F7A1B4600EF7A12 /* NavigationController.swift in Sources */,
+				CE1698A81F944C8500C67FC3 /* LayoutMarginsView.swift in Sources */,
 				CEFAB43D1F8F764100965A11 /* NewAutoLayoutAPIViewController.swift in Sources */,
 				CE9AED041F7A1B4600EF7A12 /* FirstViewController.swift in Sources */,
 				CE9AED021F7A1B4600EF7A12 /* SafeAreaViewController.swift in Sources */,
 				CEFAB4521F908D6500965A11 /* NewFeatureInViewController.swift in Sources */,
 				CEFAB4391F8F629D00965A11 /* BolderNavigationViewController.swift in Sources */,
+				CE1698AA1F944CA900C67FC3 /* DirectionalLayoutMarginsView.swift in Sources */,
 				CE9AECE91F7A1AA000EF7A12 /* AppDelegate.swift in Sources */,
+				CE1698A51F9447E200C67FC3 /* ViewNewAPIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,12 +331,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7B46453K33;
+				DEVELOPMENT_TEAM = WSQMLX487W;
 				INFOPLIST_FILE = iOS11NewFeatureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jianghongbing.iOS11NewFeatureSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7fd50e53-be28-4983-8a3f-6fa99d1e72ce";
+				PROVISIONING_PROFILE = "ac315010-6f26-4114-a3a0-5534ead47df4";
 				PROVISIONING_PROFILE_SPECIFIER = ios_development;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,12 +349,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7B46453K33;
+				DEVELOPMENT_TEAM = WSQMLX487W;
 				INFOPLIST_FILE = iOS11NewFeatureSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jianghongbing.iOS11NewFeatureSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8776bf1d-f0a0-4cc4-a734-3d2006ad4085";
+				PROVISIONING_PROFILE = "2ab1313d-3ebb-41ce-a26a-d072783e01af";
 				PROVISIONING_PROFILE_SPECIFIER = ios_adhoc;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

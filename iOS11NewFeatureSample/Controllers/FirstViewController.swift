@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     static let cellIdentifier = "SaveAreaCell"
-    let dataSources = ["safe area", "bars height","Bolder navigation", "contentInsetAdjustmentBehavior", "new auto layout API property", "new in UIViewController", "new in UIView"]
+    let dataSources = ["safe area", "bars height","Bolder navigation", "contentInsetAdjustmentBehavior", "new auto layout API property", "new API in UIViewController", "new API in UIView", "Drag and Drop"]
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "iOS11"
@@ -58,6 +58,10 @@ extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
             willPushedViewController = NewAutoLayoutAPIViewController()
         }else if indexPath.row == 5 {
             willPushedViewController = NewFeatureInViewController()
+            willPushedViewController?.hidesBottomBarWhenPushed = true 
+        }else if indexPath.row == 6 {
+            willPushedViewController = ViewNewAPIViewController()
+            willPushedViewController?.hidesBottomBarWhenPushed = true 
         }
         
         if let viewController = willPushedViewController {

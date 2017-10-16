@@ -9,17 +9,20 @@
 import UIKit
 
 class SafeAreaViewController: UIViewController {
-    var isShowStatusBar = true
-    let safeAreaView: UIView = {
+    private var isShowStatusBar = true
+    private var didUpdateConstraints = false
+    private var internalConstraints = [NSLayoutConstraint]()
+    private lazy var safeAreaView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.borderColor = UIColor.green.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 5.0
+        self.view.addSubview(view)
         return view
     }()
     
-    let actionToolBar: UIToolbar = {
+    private let actionToolBar: UIToolbar = {
         let actionBar = UIToolbar()
         actionBar.translatesAutoresizingMaskIntoConstraints = false
         let hiddenOrShowStatusBarItem = UIBarButtonItem(title: "status bar", style: .plain, target: self, action:#selector(hiddenOrShowStatusBar(_:)))
@@ -30,14 +33,30 @@ class SafeAreaViewController: UIViewController {
         return actionBar
     }()
     
-    let indicatorLabel: UILabel = {
+    private let indicatorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Show or Hidden Bars"
         return label
     }()
     
-    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        if !didUpdateConstraints {
+            if internalConstraints.count > 0 {
+                NSLayoutConstraint.deactivate(internalConstraints)
+                internalConstraints = []
+            }
+            internalConstraints = [
+                safeAreaView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                safeAreaView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+                safeAreaView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+                safeAreaView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+                    ]
+            NSLayoutConstraint.activate(internalConstraints)
+            didUpdateConstraints = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,13 +83,6 @@ class SafeAreaViewController: UIViewController {
         //5.状态栏,导航栏,标签栏都没有的时候
         //5.1 iPhoneX: 从屏幕顶部的安全区域的底部到屏幕底部的安全区域的顶部
         //5.2 其他iPhone: 整个屏幕的区域都是安全区域
-        
-        view.addSubview(safeAreaView)
-        safeAreaView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        safeAreaView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        safeAreaView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        safeAreaView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
         safeAreaView.addSubview(actionToolBar)
         actionToolBar.centerXAnchor.constraint(equalTo: safeAreaView.centerXAnchor).isActive = true
         actionToolBar.centerYAnchor.constraint(equalTo: safeAreaView.centerYAnchor).isActive = true
@@ -93,7 +105,8 @@ class SafeAreaViewController: UIViewController {
         isShowStatusBar = !isShowStatusBar
         setNeedsStatusBarAppearanceUpdate()
         print(view.safeAreaLayoutGuide.layoutFrame)
-
+        didUpdateConstraints = false
+        view.setNeedsUpdateConstraints()
     }
     
     @objc private func hiddenOrShowNavigationBar(_ barButtonItem: UIBarButtonItem) {
@@ -101,11 +114,15 @@ class SafeAreaViewController: UIViewController {
             navigationController?.setNavigationBarHidden(!isShowNavigationBar, animated: true)
             print(view.safeAreaLayoutGuide.layoutFrame)
         }
+        didUpdateConstraints = false
+        view.setNeedsUpdateConstraints()
     }
     
     @objc private func hiddenOrShowTabBar(_ barButtonItem: UIBarButtonItem) {
         if let isShowTabBar = tabBarController?.tabBar.isHidden {
             tabBarController?.tabBar.isHidden = !isShowTabBar
         }
+        didUpdateConstraints = false
+        view.setNeedsUpdateConstraints()
     }
 }

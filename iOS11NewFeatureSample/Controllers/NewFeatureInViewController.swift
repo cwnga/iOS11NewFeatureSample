@@ -37,25 +37,42 @@ class NewFeatureInViewController: UIViewController {
         //2.controller的rootView的最小边距
 //        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 50, leading: 50, bottom: 50, trailing: 50)
         print("systemMinimumLayoutMargins:\(systemMinimumLayoutMargins)")
-        //3.
+        //3.是否尊敬系统给的最小的layoutMargins,默认为YES,系统会提供一个默认的layoutMargins,iphoneX:垂直方向(0.0, 16.0, 0, 16.0),水平方向上为(0.0, 20.0, 0, 20.0),布局的时候会自动在每个方向上加上对应的值,如果为false则不会加上.
         viewRespectsSystemMinimumLayoutMargins = false
         
         addSafeAreaView()
+        
+        //4.addGestureRecognizer
+        addBottomScreenEdgesGestureRecognizer()
         
     }
     
     private func addSafeAreaView() {
         view.addSubview(safeAreaView)
-        safeAreaView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        safeAreaView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        safeAreaView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        safeAreaView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        NSLayoutConstraint(item: safeAreaView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: safeAreaView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: safeAreaView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .leftMargin, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: safeAreaView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .rightMargin, multiplier: 1.0, constant: 0).isActive = true
+//        safeAreaView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        safeAreaView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+//        safeAreaView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+//        safeAreaView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    private func addBottomScreenEdgesGestureRecognizer() {
+        let screenEdgesGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlerGestureRecognizer(_:)))
+        screenEdgesGesture.edges = .bottom
+        view.addGestureRecognizer(screenEdgesGesture)
+    }
+    
+    @objc private func handlerGestureRecognizer(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+        print("swipe from bottom to top");
     }
     
     //#MARK: override
     //controller的根视图的layoutMargins发生改变的时候,会调用该方法,用于更新subview的位置等
     override func viewLayoutMarginsDidChange() {
-        print(#line, #function, view.layoutMargins)
+        print(#line, #function, view.layoutMargins, view.directionalLayoutMargins, systemMinimumLayoutMargins)
     }
     //controller的根视图的safe area inset发生改变的时候,会调用该方法.用于更新界面适应于新的safe area
     override func viewSafeAreaInsetsDidChange() {
@@ -83,7 +100,7 @@ class NewFeatureInViewController: UIViewController {
         return nil
     }
     
-    //#MARK:默认情况下,系统定义的手势的优先级都会高于app内部定义的手势的优先级(如从屏幕的上方下滑,弹出通知中心,而不会去响应app内部定义的手势),iOS11之后可以通过该方法来指定app内部定义的手势的优先级高于系统的(尽量不要这么做,苹果文档里面说的)
+    //#MARK:延迟系统手势响应. 默认情况下,系统定义的手势的优先级都会高于app内部定义的手势的优先级(如从屏幕的上方下滑,弹出通知中心,而不会去响应app内部定义的手势),iOS11之后可以通过该方法来指定app内部定义的手势的优先级高于系统的(尽量不要这么做,苹果文档里面说的)
     override func preferredScreenEdgesDeferringSystemGestures() -> UIRectEdge {
         return .bottom
     }
