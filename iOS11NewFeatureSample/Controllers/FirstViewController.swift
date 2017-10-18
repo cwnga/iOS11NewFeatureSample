@@ -10,11 +10,10 @@ import UIKit
 
 class FirstViewController: UIViewController {
     static let cellIdentifier = "SaveAreaCell"
-    let dataSources = ["safe area", "bars height","Bolder navigation", "contentInsetAdjustmentBehavior", "new auto layout API property", "new API in UIViewController", "new API in UIView", "Drag and Drop"]
+    let dataSources = ["safe area", "bars height","Bolder navigation", "contentInsetAdjustmentBehavior", "new API in UIViewController", "new API in UIView", "Layout Margin Test", "Drag and Drop"]
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "iOS11"
-        
         addTableView()
     }
     
@@ -55,13 +54,14 @@ extension FirstViewController: UITableViewDataSource, UITableViewDelegate {
         }else if indexPath.row == 3 {
             willPushedViewController = ContentInsetViewController()
         }else if indexPath.row == 4 {
-            willPushedViewController = NewAutoLayoutAPIViewController()
-        }else if indexPath.row == 5 {
             willPushedViewController = NewFeatureInViewController()
             willPushedViewController?.hidesBottomBarWhenPushed = true 
-        }else if indexPath.row == 6 {
+        }else if indexPath.row == 5 {
             willPushedViewController = ViewNewAPIViewController()
             willPushedViewController?.hidesBottomBarWhenPushed = true 
+        }else if indexPath.row == 6 {
+            willPushedViewController = LayoutMarginsTestViewController()
+            willPushedViewController?.hidesBottomBarWhenPushed = true
         }
         
         if let viewController = willPushedViewController {

@@ -26,7 +26,7 @@ class ViewNewAPIViewController: UIViewController {
         directionalLayoutMarginsView.layer.borderColor = UIColor.green.cgColor
         directionalLayoutMarginsView.layer.borderWidth = 3.0
         //insetLayoutMargins是否从safeArea开始,默认为true,如果为false,则忽略
-        directionalLayoutMarginsView.insetsLayoutMarginsFromSafeArea = true
+//        directionalLayoutMarginsView.insetsLayoutMarginsFromSafeArea = true
         add(title: "tap to change directional layout margins", action: #selector(changeDirectionalLayoutMargins(_:)), forView: directionalLayoutMarginsView)
         return directionalLayoutMarginsView
     }()
@@ -80,10 +80,9 @@ class ViewNewAPIViewController: UIViewController {
     }
     
     @objc private func changeDirectionalLayoutMargins(_ gestureRecognizer: UITapGestureRecognizer) {
-        print("change directional layout margins")
         let directionalLayoutMargin = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 30, trailing: 40)
         if directionalLayoutMarginsView.directionalLayoutMargins.isEqualTo(another: directionalLayoutMargin) {
-            directionalLayoutMarginsView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 30, leading: 40, bottom: 10, trailing: 20)
+            directionalLayoutMarginsView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 50, leading: 40, bottom: 10, trailing: 20)
         }else {
             directionalLayoutMarginsView.directionalLayoutMargins = directionalLayoutMargin
         }
